@@ -8,6 +8,8 @@ import Sorry from './pages/Sorry'
 import LoveMessages from './pages/LoveMessages'
 import FunInteraction from './pages/FunInteraction'
 
+import Panipuri from './pages/Panipuri'
+
 export default function App() {
   return (
     <BrowserRouter>
@@ -19,6 +21,7 @@ export default function App() {
         <Route path="/sorry" element={<Sorry />} />
         <Route path="/love-messages" element={<LoveMessages />} />
         <Route path="/fun" element={<FunInteraction />} />
+        <Route path="/panipuri" element={<Panipuri />} />
       </Routes>
     </BrowserRouter>
   )

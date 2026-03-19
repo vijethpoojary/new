@@ -6,13 +6,13 @@ import '../styles/LoveMessages.css'
 const MESSAGES = [
   {
     icon: '🌹',
-    title: 'My Forever',
-    text: "In a world full of chaos, you are my calm. Every time I look at you, I see my future — and it's the most beautiful thing I've ever seen.",
+    title: 'Otthule 😁',
+    text: "Dunchi munkuge😁, Kopa churu jasthige 😁 Anda cheepeda eduru ovula ijjige😁",
   },
   {
     icon: '🌙',
-    title: 'Moonlight Thoughts',
-    text: "Late at night when the world is quiet, my thoughts always find their way back to you. You live in every corner of my mind.",
+    title: 'Mulpora othule 😁',
+    text: "Eer enna Jojja 😁, Yan eerna jojja 😁, Nama rud serad malpuga kinni jojja k 😁",
   },
   {
     icon: '💫',

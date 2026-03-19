@@ -4,9 +4,10 @@ import '../styles/Navbar.css'
 
 const links = [
   { to: '/',              label: '🏠 Home' },
-  { to: '/sorry',         label: '💖 1000 I Love Yous' },
-  { to: '/love-messages', label: '💌 Love Notes' },
-  { to: '/fun',           label: '💘 Are You Mine?' },
+  { to: '/sorry',         label: '💖 Kinya surprise 😁' },
+  { to: '/love-messages', label: '💌 Kavana 😁' },
+  { to: '/fun',           label: '💘 Bale gobbuga 😁' },
+  { to: '/panipuri',      label: '🫧 Panipuri' },
 ]
 
 export default function Navbar() {
@@ -21,7 +22,7 @@ export default function Navbar() {
 
   return (
     <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
-      <div className="navbar__brand">💖 My Love</div>
+      <div className="navbar__brand">💖 Enna appu 🫂</div>
 
       <button className="navbar__burger" onClick={() => setOpen(o => !o)} aria-label="menu">
         {open ? '✕' : '☰'}

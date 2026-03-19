@@ -91,6 +91,12 @@
   animation: fadeInUp 1s 1.6s ease both, pulse 2.5s 2.6s ease infinite;
 }
 
+.home__btn--pani {
+  margin-top: 16px;
+  background: linear-gradient(135deg, #ffb347, #ff6b9d);
+  animation: fadeInUp 1s 1.9s ease both;
+}
+
 .home__scroll-hint {
   position: absolute;
   bottom: 20px;

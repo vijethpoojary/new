@@ -54,14 +54,14 @@ export default function FunInteraction() {
       {answer !== 'yes' && (
         <div className="fun__question-box glass-card">
           <div className="fun__heart-big">💗</div>
-          <h2 className="fun__question">Do you love me?</h2>
+          <h2 className="fun__question">Enk Cheepeda korpara ?</h2>
           <p className="fun__hint">
             {noCount > 0 ? `You've tried to say no ${noCount} time${noCount > 1 ? 's' : ''}... 😏` : 'Choose wisely 😉'}
           </p>
 
           <div className="fun__buttons">
             <button className="btn-glow fun__yes-btn" onClick={handleYes}>
-              YES 💖
+              Korpe 😁
             </button>
 
             <button
@@ -86,10 +86,10 @@ export default function FunInteraction() {
               <span key={i} className="fun__success-heart" style={{ '--i': i }}>{h}</span>
             ))}
           </div>
-          <h2 className="fun__success-title">I knew it! 💖</h2>
+          <h2 className="fun__success-title">Enk Gothu ithnd💖</h2>
           <p className="fun__success-msg">
-            I love you more than words could ever say.<br />
-            You are my whole world. 🌍❤️
+            Enna appu eer korpar pand gothu ithnd 😁<br />
+            I love you choo much jojja🌍❤️
           </p>
           <button className="btn-glow" style={{ marginTop: '28px' }} onClick={reset}>
             Ask again 🔄
