@@ -25,6 +25,7 @@ export default function Navbar() {
       <div className="navbar__brand">💖 Enna appu 🫂</div>
 
       <button className="navbar__burger" onClick={() => setOpen(o => !o)} aria-label="menu">
+        <span className="navbar__burger-hint">click this</span>
         {open ? '✕' : '☰'}
       </button>
 

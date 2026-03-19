@@ -39,18 +39,26 @@
 .navbar__burger {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 6px;
   background: rgba(255,255,255,0.1);
   border: 1px solid rgba(255,255,255,0.2);
   border-radius: 10px;
   color: #fff;
   font-size: 1.3rem;
-  width: 44px;
+  padding: 0 12px;
   height: 44px;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   flex-shrink: 0;
   transition: background 0.3s ease;
+}
+
+.navbar__burger-hint {
+  font-family: 'Dancing Script', cursive;
+  font-size: 0.95rem;
+  color: var(--pink-light);
+  animation: pulse 1.5s ease infinite;
+  white-space: nowrap;
 }
 
 .navbar__burger:hover {
