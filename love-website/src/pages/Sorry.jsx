@@ -47,13 +47,9 @@ export default function Sorry() {
       <FloatingHearts count={12} />
 
       <div className="sorry__header">
-        <h1 className="sorry__title">1000 "I Love You"s 💖</h1>
+        <h1 className="sorry__title">I love you cho much jojja❤️</h1>
         <p className="sorry__sub">
-          A thousand times, and still not enough.
         </p>
-        <div className="sorry__count">
-          <span>❤️</span> 1,000 times I love you <span>❤️</span>
-        </div>
       </div>
 
       <div className="sorry__grid">
@@ -63,7 +59,6 @@ export default function Sorry() {
             className="sorry__card glass-card"
             style={{ '--card-bg': card.color }}
           >
-            <span className="sorry__num">#{card.id + 1}</span>
             <p>{card.text}</p>
           </div>
         ))}
