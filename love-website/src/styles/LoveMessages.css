@@ -1,0 +1,207 @@
+/* ── Mobile-first Love Messages ── */
+
+.love {
+  min-height: 100vh;
+  padding-top: 70px;
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.love__header {
+  text-align: center;
+  padding: 28px 20px 8px;
+}
+
+.love__title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 6vw, 3.5rem);
+  background: linear-gradient(135deg, #ff6b9d, #c77dff, #ffb347);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite, fadeInUp 0.8s ease both;
+  line-height: 1.2;
+}
+
+.love__sub {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  color: rgba(255,255,255,0.58);
+  margin-top: 8px;
+  animation: fadeInUp 0.8s 0.2s ease both;
+}
+
+/* ── Grid — mobile: single column ── */
+.love__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 32px 16px 80px;
+  max-width: 1300px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ── Flip card ── */
+.love__card-wrap {
+  perspective: 1000px;
+  /* fixed height so flip works; taller on mobile for text */
+  height: 220px;
+  cursor: pointer;
+  animation: fadeInUp 0.6s ease both;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* stagger delays */
+.love__card-wrap:nth-child(1)  { animation-delay: 0.05s; }
+.love__card-wrap:nth-child(2)  { animation-delay: 0.10s; }
+.love__card-wrap:nth-child(3)  { animation-delay: 0.15s; }
+.love__card-wrap:nth-child(4)  { animation-delay: 0.20s; }
+.love__card-wrap:nth-child(5)  { animation-delay: 0.25s; }
+.love__card-wrap:nth-child(6)  { animation-delay: 0.30s; }
+.love__card-wrap:nth-child(7)  { animation-delay: 0.35s; }
+.love__card-wrap:nth-child(8)  { animation-delay: 0.40s; }
+.love__card-wrap:nth-child(9)  { animation-delay: 0.45s; }
+.love__card-wrap:nth-child(10) { animation-delay: 0.50s; }
+
+.love__card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.love__card-wrap--flipped .love__card-inner {
+  transform: rotateY(180deg);
+}
+
+.love__card {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 22px 18px;
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.love__card-wrap:hover .love__card,
+.love__card-wrap:focus .love__card {
+  box-shadow: 0 0 36px rgba(255, 107, 157, 0.4), 0 0 70px rgba(199, 125, 255, 0.18);
+}
+
+.love__card--back {
+  transform: rotateY(180deg);
+  background: linear-gradient(135deg, rgba(255,107,157,0.2), rgba(199,125,255,0.2)) !important;
+}
+
+.love__card-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  animation: pulse 2s ease infinite;
+  display: block;
+  flex-shrink: 0;
+}
+
+.love__card h3 {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(1.2rem, 3.5vw, 1.5rem);
+  color: var(--pink-light);
+  margin-bottom: 6px;
+}
+
+.love__card-hint {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.38);
+  font-style: italic;
+}
+
+.love__card-text {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(0.82rem, 2.2vw, 0.95rem);
+  color: rgba(255,255,255,0.9);
+  line-height: 1.65;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+}
+
+/* ── Small phones (480px+) ── */
+@media (min-width: 480px) {
+  .love__grid {
+    padding: 36px 20px 80px;
+    gap: 22px;
+  }
+
+  .love__card-wrap {
+    height: 230px;
+  }
+}
+
+/* ── Tablet (768px+) — 2 columns ── */
+@media (min-width: 768px) {
+  .love {
+    padding-top: 80px;
+  }
+
+  .love__header {
+    padding: 36px 32px 10px;
+  }
+
+  .love__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    padding: 40px 32px 90px;
+  }
+
+  .love__card-wrap {
+    height: 240px;
+  }
+
+  .love__card {
+    padding: 26px 20px;
+  }
+}
+
+/* ── Desktop (1024px+) — 3 columns ── */
+@media (min-width: 1024px) {
+  .love {
+    padding-top: 90px;
+  }
+
+  .love__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    padding: 50px 48px 100px;
+  }
+
+  .love__card-wrap {
+    height: 250px;
+    cursor: none;
+  }
+
+  .love__card {
+    padding: 28px 22px;
+  }
+
+  .love__card-icon {
+    font-size: 2.4rem;
+  }
+}
+
+/* ── Wide (1280px+) — 4 columns ── */
+@media (min-width: 1280px) {
+  .love__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

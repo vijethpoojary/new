@@ -1,0 +1,162 @@
+/* ── Mobile-first Sorry page ── */
+
+.sorry {
+  min-height: 100vh;
+  padding-top: 70px;
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.sorry__header {
+  text-align: center;
+  padding: 28px 20px 16px;
+}
+
+.sorry__title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 6vw, 3.5rem);
+  background: linear-gradient(135deg, #ff6b9d, #c77dff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: glow 3s ease infinite, fadeInUp 0.8s ease both;
+  line-height: 1.2;
+}
+
+.sorry__sub {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: rgba(255,255,255,0.62);
+  margin-top: 10px;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  animation: fadeInUp 0.8s 0.2s ease both;
+  padding: 0 8px;
+}
+
+.sorry__count {
+  margin-top: 12px;
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(1rem, 3vw, 1.3rem);
+  color: var(--pink-light);
+  animation: fadeInUp 0.8s 0.4s ease both;
+}
+
+/* ── Grid — mobile: 2 columns ── */
+.sorry__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding: 24px 14px 70px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.sorry__card {
+  background: var(--card-bg, rgba(255,255,255,0.12)) !important;
+  padding: 14px 10px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+  /* ensure cards don't overflow */
+  min-width: 0;
+}
+
+.sorry__card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,107,157,0.1), rgba(199,125,255,0.1));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: inherit;
+}
+
+.sorry__card:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 10px 30px rgba(255, 107, 157, 0.4);
+}
+
+.sorry__card:hover::before {
+  opacity: 1;
+}
+
+/* disable heavy hover on touch */
+@media (hover: none) {
+  .sorry__card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+.sorry__num {
+  display: block;
+  font-size: 0.6rem;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 4px;
+  font-family: 'Lato', sans-serif;
+}
+
+.sorry__card p {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(0.8rem, 2.2vw, 1rem);
+  color: rgba(255,255,255,0.9);
+  line-height: 1.4;
+  position: relative;
+  z-index: 1;
+  word-break: break-word;
+}
+
+/* ── Small phones (480px+) ── */
+@media (min-width: 480px) {
+  .sorry__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    padding: 28px 18px 70px;
+  }
+
+  .sorry__card {
+    padding: 16px 12px;
+  }
+}
+
+/* ── Tablet (768px+) ── */
+@media (min-width: 768px) {
+  .sorry {
+    padding-top: 80px;
+  }
+
+  .sorry__header {
+    padding: 36px 32px 20px;
+  }
+
+  .sorry__grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 14px;
+    padding: 36px 32px 80px;
+  }
+
+  .sorry__card {
+    padding: 18px 14px;
+  }
+
+  .sorry__card p {
+    font-size: 1rem;
+  }
+}
+
+/* ── Desktop (1024px+) ── */
+@media (min-width: 1024px) {
+  .sorry {
+    padding-top: 90px;
+  }
+
+  .sorry__grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
+    padding: 40px 40px 90px;
+  }
+}

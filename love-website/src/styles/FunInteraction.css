@@ -1,0 +1,290 @@
+/* ── Mobile-first Fun Interaction ── */
+
+.fun {
+  min-height: 100vh;
+  padding-top: 70px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.fun__header {
+  text-align: center;
+  padding: 28px 20px 8px;
+  width: 100%;
+}
+
+.fun__title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 6vw, 3.5rem);
+  background: linear-gradient(135deg, #ff6b9d, #c77dff, #ffb347);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite, fadeInUp 0.8s ease both;
+  line-height: 1.2;
+}
+
+.fun__sub {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  color: rgba(255,255,255,0.58);
+  margin-top: 8px;
+  animation: fadeInUp 0.8s 0.2s ease both;
+}
+
+/* ── Question box ── */
+.fun__question-box {
+  margin-top: 28px;
+  padding: 32px 22px;
+  text-align: center;
+  max-width: 480px;
+  width: calc(100% - 32px);
+  animation: fadeInUp 0.8s 0.3s ease both;
+  position: relative;
+  /* overflow visible so NO button can escape */
+  overflow: visible;
+}
+
+.fun__heart-big {
+  font-size: 3.2rem;
+  animation: pulse 1.2s ease infinite;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.fun__question {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.4rem, 5vw, 2rem);
+  color: #fff;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.fun__hint {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(0.95rem, 2.8vw, 1.1rem);
+  color: rgba(255,255,255,0.48);
+  margin-bottom: 28px;
+  min-height: 1.5em;
+}
+
+.fun__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  /* enough room for NO button to escape */
+  min-height: 100px;
+  padding: 10px 0;
+}
+
+.fun__yes-btn {
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  padding: 14px 36px;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.fun__no-btn {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50px;
+  color: rgba(255,255,255,0.7);
+  font-family: 'Lato', sans-serif;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  padding: 12px 24px;
+  min-height: 48px;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+  position: relative;
+  z-index: 2;
+  white-space: nowrap;
+  flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.fun__no-btn:hover {
+  background: rgba(255,255,255,0.06);
+}
+
+/* ── Success ── */
+.fun__success {
+  margin-top: 28px;
+  padding: 36px 24px;
+  text-align: center;
+  max-width: 500px;
+  width: calc(100% - 32px);
+  animation: fadeInUp 0.6s ease both;
+  position: relative;
+  overflow: hidden;
+}
+
+.fun__success-hearts {
+  position: relative;
+  height: 70px;
+  margin-bottom: 8px;
+}
+
+.fun__success-heart {
+  position: absolute;
+  font-size: 1.6rem;
+  left: 50%;
+  top: 50%;
+  animation: successHeart 1.5s calc(var(--i) * 0.15s) ease-out both;
+}
+
+@keyframes successHeart {
+  0%   { opacity: 0; transform: translate(-50%, -50%) scale(0) rotate(0deg); }
+  60%  { opacity: 1; transform: translate(calc(-50% + var(--tx, 0px)), calc(-50% + var(--ty, 0px))) scale(1.2) rotate(20deg); }
+  100% { opacity: 0.8; transform: translate(calc(-50% + var(--tx, 0px)), calc(-50% + var(--ty, 0px))) scale(1) rotate(0deg); }
+}
+
+.fun__success-heart:nth-child(1) { --tx: -70px; --ty: -25px; }
+.fun__success-heart:nth-child(2) { --tx: -35px; --ty: -55px; }
+.fun__success-heart:nth-child(3) { --tx:  15px; --ty: -50px; }
+.fun__success-heart:nth-child(4) { --tx:  60px; --ty: -20px; }
+.fun__success-heart:nth-child(5) { --tx:  70px; --ty:  18px; }
+.fun__success-heart:nth-child(6) { --tx:  25px; --ty:  45px; }
+.fun__success-heart:nth-child(7) { --tx: -25px; --ty:  45px; }
+.fun__success-heart:nth-child(8) { --tx: -70px; --ty:  18px; }
+
+.fun__success-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+  background: linear-gradient(135deg, #ff6b9d, #c77dff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: glow 2s ease infinite;
+  margin-bottom: 14px;
+}
+
+.fun__success-msg {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  color: rgba(255,255,255,0.85);
+  line-height: 1.8;
+}
+
+/* ── Extras ── */
+.fun__extras {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  padding: 36px 16px 80px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.fun__extra-card {
+  padding: 24px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.8s ease both;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.fun__extra-card:hover,
+.fun__extra-card:active {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 14px 44px rgba(255,107,157,0.4);
+}
+
+.fun__extra-card span {
+  font-size: 2.2rem;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.fun__extra-card--pulse span {
+  animation: pulse 1s ease infinite;
+}
+
+.fun__extra-card p {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.8);
+}
+
+/* ── Small phones (480px+) ── */
+@media (min-width: 480px) {
+  .fun__question-box {
+    padding: 36px 28px;
+  }
+
+  .fun__extras {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 600px;
+    padding: 40px 20px 80px;
+  }
+}
+
+/* ── Tablet (768px+) ── */
+@media (min-width: 768px) {
+  .fun {
+    padding-top: 80px;
+  }
+
+  .fun__header {
+    padding: 36px 32px 10px;
+  }
+
+  .fun__question-box {
+    padding: 44px 36px;
+    margin-top: 36px;
+  }
+
+  .fun__heart-big {
+    font-size: 3.8rem;
+  }
+
+  .fun__buttons {
+    min-height: 90px;
+    gap: 20px;
+  }
+
+  .fun__success {
+    padding: 44px 36px;
+    margin-top: 36px;
+  }
+
+  .fun__extras {
+    max-width: 700px;
+    padding: 48px 32px 90px;
+    gap: 20px;
+  }
+}
+
+/* ── Desktop (1024px+) ── */
+@media (min-width: 1024px) {
+  .fun {
+    padding-top: 90px;
+  }
+
+  .fun__no-btn {
+    cursor: none;
+  }
+
+  .fun__extra-card {
+    cursor: none;
+    padding: 28px 32px;
+  }
+
+  .fun__extra-card span {
+    font-size: 2.5rem;
+  }
+
+  .fun__extras {
+    max-width: 800px;
+    padding: 50px 40px 100px;
+  }
+}
