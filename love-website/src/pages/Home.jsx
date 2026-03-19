@@ -4,7 +4,7 @@ import FloatingHearts from '../components/FloatingHearts'
 import Confetti from '../components/Confetti'
 import '../styles/Home.css'
 
-const FULL_TEXT = 'To the most beautiful girl in my life ❤️'
+const FULL_TEXT = 'Enna lifed mokeda kinni mnky❤️ '
 
 export default function Home() {
   const [displayed, setDisplayed] = useState('')

@@ -34,14 +34,41 @@ html {
 
 body {
   font-family: 'Lato', sans-serif;
-  background: linear-gradient(135deg, #1a0533 0%, #2d0a4e 30%, #4a0e6b 60%, #1a0533 100%);
-  background-attachment: fixed;
   min-height: 100vh;
   color: #fff;
   cursor: none;
-  /* prevent horizontal scroll globally */
   overflow-x: hidden;
   width: 100%;
+  position: relative;
+}
+
+/* ── Girlfriend photo background ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url('/girlfriend.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  /* dark romantic overlay so text stays readable */
+  filter: brightness(0.35) saturate(1.2);
+  z-index: -2;
+}
+
+/* ── Purple gradient overlay on top of photo ── */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 5, 51, 0.72) 0%,
+    rgba(45, 10, 78, 0.60) 40%,
+    rgba(74, 14, 107, 0.55) 70%,
+    rgba(26, 5, 51, 0.72) 100%
+  );
+  z-index: -1;
 }
 
 /* restore normal cursor on touch devices */
